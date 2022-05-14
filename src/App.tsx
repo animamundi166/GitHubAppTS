@@ -1,58 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import Header from './components/Header/Header';
+import Loader from './components/Loader/Loader';
+import StartPage from './components/Main/EmptyPages/StartPage';
+import NoUser from './components/Main/EmptyPages/NoUser';
+import Main from './components/Main/Main';
+import { useAppSelector } from './store/hooks';
+import { RootState } from './store/store';
 
-function App() {
+const App = () => {
+  const { isWarningUser } = useAppSelector((store: RootState) => store.userData);
+  const { isLoadingUser } = useAppSelector((store: RootState) => store.userData);
+  const { user } = useAppSelector((store: RootState) => store.userData);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+      <Header />
+      {isLoadingUser && <Loader />}
+      {!user && !isWarningUser && !isLoadingUser && <StartPage />}
+      {isWarningUser && <NoUser />}
+      {user && <Main />}
+    </>
   );
-}
+};
 
 export default App;

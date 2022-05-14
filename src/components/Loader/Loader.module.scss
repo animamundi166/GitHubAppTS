@@ -1,0 +1,23 @@
+.loader {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

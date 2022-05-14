@@ -1,0 +1,60 @@
+.reposContainer {
+  min-width: 70%;
+
+  .reposTitle {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    margin-bottom: 28px;
+  }
+
+  .reposList {
+    position: relative;
+    min-height: 540px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1324px) {
+  .reposContainer {
+    min-width: 65%;
+
+    .reposList {
+      min-height: 520px;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .reposContainer {
+    min-width: 60%;
+
+    .reposTitle {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 130%;
+      margin-bottom: 28px;
+    }
+
+    .reposList {
+      min-height: 520px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .reposContainer {
+    min-width: 100%;
+
+    .reposTitle {
+      text-align: center;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 100%;
+      margin-bottom: 22px;
+    }
+
+    .reposList {
+      min-height: 470px;
+    }
+  }
+}

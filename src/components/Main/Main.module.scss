@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 28px 56px;
+  gap: 85px;
+}
+
+@media (max-width: 1366px) {
+  .main {
+    gap: 65px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1324px) {
+  .main {
+    gap: 45px;
+    padding: 28px 35px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main {
+    gap: 28px;
+    padding: 28px 30px;
+  }
+}
+
+@media(max-width: 768px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 25px 45px;
+    gap: 45px;
+  }
+
+}
