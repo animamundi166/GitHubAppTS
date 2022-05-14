@@ -1,6 +1,6 @@
 .main {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 28px 56px;
   gap: 85px;
 }
@@ -14,13 +14,13 @@
 @media (min-width: 1025px) and (max-width: 1324px) {
   .main {
     gap: 45px;
-    padding: 28px 35px;
+    padding: 28px 40px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .main {
-    gap: 28px;
+    gap: 40px;
     padding: 28px 30px;
   }
 }

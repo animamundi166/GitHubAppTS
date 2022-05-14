@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, KeyboardEvent, FC, useState } from 'react';
 import { useAppDispatch } from '../../store/hooks';
 import { getUser, getRepos, inputValue } from '../../store/userSlice';
 import { ReactComponent as Logo } from '../icons/logo.svg';
@@ -14,7 +14,7 @@ const Header: FC = () => {
     setUserName(e.target.value);
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter' && userName !== '') {
       dispatch(inputValue(userName));
       dispatch(getUser(userName));
